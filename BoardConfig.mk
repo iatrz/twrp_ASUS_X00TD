@@ -50,7 +50,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 # Kernel
-BOARD_KERNEL_CMDLINE := earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.selinux=permissive buildvariant=eng
+<<<<<<< HEAD
+BOARD_KERNEL_CMDLINE := earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3 firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7 androidboot.selinux=permissive buildvariant=eng printk.devkmsg=on
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
@@ -75,9 +76,48 @@ TARGET_BOARD_PLATFORM := sdm660
 PLATFORM_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPT_NEW := true
+TW_INCLUDE_CRYPTO := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+
 # TWRP Configuration
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_THEME := portrait_hdpi
+# MTP seems to cause a kernel panic, at least with some kernels, so disable it for now
+TW_EXCLUDE_MTP := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
+PLATFORM_SECURITY_PATCH := 2025-12-31
+PLATFORM_VERSION := 9.0.0
+
+# MultiROM configuration
+MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 6
+MR_DEVICE_BOOTDEVICE := /dev/block/platform/soc/c0c4000.sdhci
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_ENCRYPTION := true
+MR_ENCRYPTION_FAKE_PROPERTIES := true
+MR_ENCRYPTION_FAKE_PROPERTIES_EXTRAS := $(DEVICE_PATH)/multirom/mr_fake_properties.c
+MR_ENCRYPTION_SETUP_SCRIPT := $(DEVICE_PATH)/multirom/mr_cp_crypto.sh
+MR_FSTAB := $(DEVICE_PATH)/recovery.fstab
+MR_INIT_DEVICES := $(DEVICE_PATH)/multirom/mr_init_devices.c
+MR_INPUT_TYPE := type_b
+MR_KEXEC_MEM_MIN := 0x86000000
+MR_NO_KEXEC := enabled
+MR_PIXEL_FORMAT := "BGRA_8888"
+MR_UNIFIED_TABS := true
+MR_USE_MROM_FSTAB := true
+MR_EXTRA_FIRMWARE_DIR := "/mrom_enc/vendor/firmware"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+DEVICE_RESOLUTION := 1080x2160
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_DEVICE_HAS_VENDOR_PARTITION := true
+MR_DEVICE_HAS_DRM_GRAPHICS := true
+6
