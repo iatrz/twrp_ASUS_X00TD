@@ -1,0 +1,29 @@
+version: 2.1
+jobs:
+  TWRP-X00TD:
+   docker:
+      - image: iatrpkd/docker:Twrp-build
+   steps:
+      - run:
+          name: Syncing source
+          no_output_timeout: 20m
+          command: |
+            cd ~
+            mkdir twrp && cd twrp
+            repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
+            repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
+            mkdir -p device/asus && cd device/asus
+            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
+      - run:
+          name: Building
+          no_output_timeout: 20m
+          command: |
+            cd ~/twrp
+            source build/envsetup.sh
+            lunch omni_ASUS_X00TD-eng
+            make -j8 recoveryimage
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - TWRP-X00TD
