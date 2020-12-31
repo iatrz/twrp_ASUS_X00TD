@@ -20,7 +20,7 @@ jobs:
           command: |
             cd ~/twrp
             source build/envsetup.sh
-            lunch omni_ASUS_X00TD-eng
+            lunch omni_ASUS_X00TD-userdebug
             WITH_TWRP=true make -j8 recoveryimage
       - run:
           name: Telegram Upload CI
