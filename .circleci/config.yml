@@ -22,6 +22,14 @@ jobs:
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
             make -j8 recoveryimage
+      - run:
+          name: Telegram Upload CI
+          no_output_timeout: 20m
+          command: |
+            cd ~/twrp/out/target/product/X00TD
+            ZIPNAME="TWRP-$(date +%d_%m_%Y_%H_%M)-X00TD.zip"
+            sudo zip -r9 $ZIPNAME *.img
+            curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 workflows:
   version: 2.1
   cooking:
