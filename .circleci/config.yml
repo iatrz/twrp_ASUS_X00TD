@@ -29,7 +29,7 @@ jobs:
           command: |
             cd ~/twrp/out/target/product/ASUS_X00TD
             ZIPNAME="TWRP-$(date +%d_%m_%Y_%H_%M)-X00TD.zip"
-            sudo zip -r9 $ZIPNAME *.img
+            sudo zip -r9 $ZIPNAME recovery.img
             curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 workflows:
   version: 2.1
