@@ -21,7 +21,7 @@ jobs:
             cd ~/twrp
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
-            mka recoveryimage
+            WITH_TWRP=true make -j8 recoveryimage
       - run:
           name: Telegram Upload CI
           no_output_timeout: 20m
