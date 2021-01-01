@@ -14,6 +14,7 @@ jobs:
             repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
+            cd ~/mrom && rm -rf system/extras/multirom
             cd ~/mrom && git clone https://github.com/Tasssadar/multirom.git system/extras/multirom
             cd ~/mrom && cd system/extras/multirom
             git submodule update --init
