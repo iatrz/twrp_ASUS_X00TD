@@ -25,9 +25,11 @@ jobs:
           command: |
             cd ~/mrom
             source build/envsetup.sh
+            export ALLOW_MISSING_DEPENDENCIES=true
             lunch omni_ASUS_X00TD-eng
-            make -j4 multirom trampoline
-            make -j4 multirom_zip
+            mka -j$(nproc --all) recoveryimage
+            mka -j$(nproc --all) multirom_zip
+            mka -j$(nproc --all) multirom_uninstaller
       - run:
           name: Telegram Upload CI
           no_output_timeout: 20m
