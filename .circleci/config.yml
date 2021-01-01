@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  TWRP-X00TD:
+  mrom-X00TD:
    docker:
       - image: iatrpkd/docker:Twrp-build
    steps:
@@ -9,30 +9,35 @@ jobs:
           no_output_timeout: 20m
           command: |
             cd ~
-            mkdir twrp && cd twrp
+            mkdir mrom && cd mrom
             repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
             repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
             mkdir -p device/asus && cd device/asus
-            git clone https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
+            git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
+            cd ~/mrom && git clone https://github.com/Tasssadar/multirom.git system/extras/multirom
+            cd ~/mrom && cd system/extras/multirom
+            git submodule update --init
+            cd ~/mrom
+            git clone https://github.com/Tasssadar/libbootimg.git system/extras/libbootimg
       - run:
           name: Building
           no_output_timeout: 20m
           command: |
-            cd ~/twrp
-            export ALLOW_MISSING_DEPENDENCIES=true
+            cd ~/mrom
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
-            mka recoveryimage
+            make -j4 multirom trampoline
+            make -j4 multirom_zip
       - run:
           name: Telegram Upload CI
           no_output_timeout: 20m
           command: |
-            cd ~/twrp/out/target/product/ASUS_X00TD
-            ZIPNAME="TWRP-$(date +%d_%m_%Y_%H_%M)-X00TD.zip"
-            sudo zip -r9 $ZIPNAME recovery.img
+            cd ~/mrom/out/target/product/ASUS_X00TD
+            ZIPNAME="mrom-$(date +%d_%m_%Y_%H_%M)-X00TD.zip"
+            sudo zip -r9 $ZIPNAME *.zip
             curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 workflows:
   version: 2.1
   cooking:
     jobs:
-      - TWRP-X00TD
+      - mrom-X00TD
