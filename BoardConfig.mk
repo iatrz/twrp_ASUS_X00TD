@@ -81,6 +81,9 @@ TARGET_BOARD_PLATFORM := sdm660
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TW_INCLUDE_CRYPTO := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
