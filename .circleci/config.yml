@@ -18,7 +18,7 @@ jobs:
             git clone -b android-9.0 https://github.com/vasishath/multirom system/extras/multirom
             cd ~/mrom/system/extras/multirom
             git submodule update --init
-            cd ~/mrom
+            cd ~/mrom && rm -rf system/extras/libbootimg
             git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
