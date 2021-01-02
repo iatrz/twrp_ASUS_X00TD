@@ -14,6 +14,7 @@ jobs:
             repo sync --fetch-submodules
             rm -rf ~/mrom/bootable/recovery
             git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
+            rm -rf ~/mrom/system/extras/multirom
             git clone -b android-9.0 https://github.com/vasishath/multirom system/extras/multirom
             cd ~/mrom/system/extras/multirom
             git submodule update --init
