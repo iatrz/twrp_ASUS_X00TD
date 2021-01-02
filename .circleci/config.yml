@@ -10,8 +10,15 @@ jobs:
           command: |
             cd ~
             mkdir mrom && cd mrom
-            repo init --depth=1 -u https://github.com/multirom-dev/android -b android-7.1
-            repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
+            repo init --depth=1 -u git://github.com/Linux-On-Sdm6Series/android.git -b multirom
+            repo sync --fetch-submodules
+            rm -rf ~/mrom/bootable/recovery
+            git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
+            git clone -b android-9.0 https://github.com/vasishath/multirom system/extras/multirom
+            cd ~/mrom/system/extras/multirom
+            git submodule update --init
+            cd ~/mrom
+            git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
       - run:
@@ -31,9 +38,8 @@ jobs:
           no_output_timeout: 20m
           command: |
             cd ~/mrom
-            rm -rf vendor/qcom/opensource/cryptfs_hw
-            source build/envsetup.sh
             export ALLOW_MISSING_DEPENDENCIES=true
+            source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
             mka -j$(nproc --all) recoveryimage
             mka -j$(nproc --all) multirom_zip
