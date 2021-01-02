@@ -19,6 +19,7 @@ jobs:
           no_output_timeout: 20m
           command: |
             cd ~/mrom
+            rm -rf vendor/qcom/opensource/cryptfs_hw
             source build/envsetup.sh
             export ALLOW_MISSING_DEPENDENCIES=true
             lunch omni_ASUS_X00TD-eng
