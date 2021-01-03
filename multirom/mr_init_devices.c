@@ -15,6 +15,8 @@ const char *mr_init_devices[] =
     "/sys/bus/platform/drivers/*",
     "/sys/module/*",
 
+    "/sys/block/mmcblk0",
+
     // Storage devices
     "/sys/dev/block/*",
     "/sys/block/sda",
