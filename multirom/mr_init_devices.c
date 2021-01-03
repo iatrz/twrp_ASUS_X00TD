@@ -81,13 +81,9 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/a800000.ssusb/a904000.qcom,usbbam",
     "/sys/devices/soc/a800000.ssusb",
 
-    /* "/sys/devices/soc/c176000.i2c/i2c-*",
-    "/sys/devices/soc/c176000.i2c",
-    "/sys/devices/soc/c178000.i2c/i2c-*",
-    "/sys/devices/soc/c178000.i2c",
-    "/sys/devices/soc/c1b7000.i2c/i2c-*",
-    "/sys/devices/soc/c1b7000.i2c",*/
-    "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
+    "/sys/devices/soc/c176000.i2c/*",
+    "/sys/devices/soc/c1b7000.i2c/*",
+    "/sys/devices/soc/c178000.i2c/*",
 
     // ADB
     "/sys/devices/virtual/tty/ptmx",
