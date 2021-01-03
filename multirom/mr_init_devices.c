@@ -81,7 +81,7 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/tty/ptmx",
     "/sys/devices/soc/a800000.ssusb/a904000.qcom,usbbam",
     "/sys/devices/soc/a800000.ssusb",
-    "/sys/devices/soc/a800000.ssusb/a800000.dwc3",
+    "/sys/devices/soc/a800000.ssusb/a800000.dwc3*",
 
     "/sys/devices/soc/c176000.i2c/i2c-2/i2c-dev/i2c-2",
     "/sys/devices/soc/c176000.i2c/i2c-2",
