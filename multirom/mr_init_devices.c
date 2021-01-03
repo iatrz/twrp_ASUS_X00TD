@@ -28,6 +28,7 @@ const char *mr_init_devices[] =
     "/sys/block/sdd",
     "/sys/block/sde",
     "/sys/block/sdf",
+    "/sys/module/mmcblk",
 
     // Internal storage
     "/sys/devices/soc/c0c4000.sdhci",
