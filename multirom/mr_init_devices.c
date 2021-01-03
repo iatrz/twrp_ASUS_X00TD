@@ -23,7 +23,7 @@ const char *mr_init_devices[] =
     "/sys/module/mmcblk",
 
     // Internal storage
-    "/sys/devices/soc/c0c4000.sdhci/*",
+    "/sys/devices/soc/c0c4000.sdhci",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1",
@@ -65,9 +65,11 @@ const char *mr_init_devices[] =
     "/sys/class/input/input*",
     "/sys/class/misc/uinput",
     "/sys/class/tty/ptmx",
-    "/sys/devices/soc/soc:gpio_keys/input*",
+    "/sys/devices/soc/soc:gpio_keys/input/input8",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
+    "/sys/devices/virtual/tty/ptmx",
+    "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
 
     // ADB
     "/sys/devices/virtual/tty/ptmx",
@@ -83,6 +85,7 @@ const char *mr_init_devices[] =
 
     // Encryption
     "/sys/devices/virtual/icesdcc/icesdcc",
+    "/sys/devices/virtual/icesdcc/iceufs",
     "/sys/devices/virtual/misc/device-mapper",
     "/sys/devices/virtual/misc/ion",
     "/sys/devices/virtual/qseecom/qseecom",
