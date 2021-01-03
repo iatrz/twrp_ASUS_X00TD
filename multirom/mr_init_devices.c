@@ -30,11 +30,11 @@ const char *mr_init_devices[] =
     "/sys/block/sdf",
 
     // Internal storage
+    "/sys/devices/soc/c0c4000.sdhci",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0",
-    "/sys/devices/soc/c0c4000.sdhci/leds/mmc0::",
 
 
 
@@ -79,7 +79,7 @@ const char *mr_init_devices[] =
 
     // USB
     "/sys/bus/usb*",
-    "/sys/devices/soc/a800000.ssusb/a800000.dwc3/",
+    "/sys/devices/soc/a800000.ssusb/a800000.dwc3*",
 
     // Encryption
     "/sys/devices/virtual/icesdcc/icesdcc",
