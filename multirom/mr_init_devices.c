@@ -36,7 +36,25 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0",
 
-
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0/block/sda",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1/block/sdb",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2/block/sdc",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3/block/sdd",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0/block/sda/*",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1/block/sdb/*",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2/block/sdc/*",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3/block/sdd/*",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde/*",
+    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf/*",
 
     // External storage
     //"/sys/block/mmcblk1",
