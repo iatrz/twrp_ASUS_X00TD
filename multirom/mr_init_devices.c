@@ -12,6 +12,9 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/graphics/fb0",
     "/sys/class/graphics/fb1",
     "/sys/devices/virtual/graphics/fb1",
+    // re-adding
+    "/sys/bus/platform/drivers/*",
+    "/sys/module/*",
 
     // mmcblk
     "/sys/block/mmcblk0",
@@ -32,28 +35,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0",
     "/sys/devices/soc/c0c4000.sdhci/leds/mmc0::",
-    "/sys/module/mmcblk",
 
-    
-    /*"/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0/block/sda",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1/block/sdb",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2/block/sdc",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3/block/sdd",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0/block/sda/*",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1/block/sdb/*",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:2/block/sdc/*",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:3/block/sdd/*",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde/*",
-    "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf/*", */
 
 
     // External storage
@@ -72,7 +54,6 @@ const char *mr_init_devices[] =
     "/sys/class/input/event*",
     "/sys/class/input/input*",
     "/sys/class/misc/uinput",
-    "/sys/module/uinput",
     "/sys/class/tty/ptmx",
     "/sys/devices/soc/soc:qcom,mdss_wb_panel",
     "/sys/devices/soc/soc:gpio_keys/input/input8",
@@ -81,22 +62,12 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/tty/ptmx",
     "/sys/devices/soc/a800000.ssusb/a904000.qcom,usbbam",
     "/sys/devices/soc/a800000.ssusb",
-    "/sys/devices/soc/a800000.ssusb/a800000.dwc3*",
 
-    "/sys/devices/soc/c176000.i2c/i2c-2/i2c-dev/i2c-2",
-    "/sys/devices/soc/c176000.i2c/i2c-2",
-    "/sys/devices/soc/c176000.i2c/i2c-2/2-0008",
-    "/sys/devices/soc/c176000.i2c/i2c-2/2-0028",
+    "/sys/devices/soc/c176000.i2c/i2c-*",
     "/sys/devices/soc/c176000.i2c",
-    "/sys/devices/soc/c178000.i2c/i2c-4/i2c-dev/i2c-4",
-    "/sys/devices/soc/c178000.i2c/i2c-4",
-    "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
-    "/sys/devices/soc/c178000.i2c/i2c-4/4-0070",
-    "/sys/devices/soc/c178000.i2c/i2c-4/4-0070/synaptics_dsxv27.0",
+    "/sys/devices/soc/c178000.i2c/i2c-*",
     "/sys/devices/soc/c178000.i2c",
-    "/sys/devices/soc/c1b7000.i2c/i2c-7/i2c-dev/i2c-7",
-    "/sys/devices/soc/c1b7000.i2c/i2c-7",
-    "/sys/devices/soc/c1b7000.i2c/i2c-7/7-0048",
+    "/sys/devices/soc/c1b7000.i2c/i2c-*",
     "/sys/devices/soc/c1b7000.i2c",
 
     // ADB
@@ -107,8 +78,7 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/misc/mtp_usb",
 
     // USB
-    "/sys/bus/usb",
-    "/sys/bus/platform/drivers/xhci-hcd*",
+    "/sys/bus/usb*",
     "/sys/devices/soc/a800000.ssusb/a800000.dwc3/",
 
     // Encryption
