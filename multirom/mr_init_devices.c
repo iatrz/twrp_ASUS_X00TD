@@ -8,9 +8,9 @@
 const char *mr_init_devices[] =
 {
     // FrameBuffers
-    //"/sys/class/graphics/fb0",
+    "/sys/class/graphics/fb0",
     "/sys/devices/virtual/graphics/fb0",
-    //"/sys/class/graphics/fb1",
+    "/sys/class/graphics/fb1",
     "/sys/devices/virtual/graphics/fb1",
 
     // mmcblk
