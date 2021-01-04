@@ -23,7 +23,7 @@ jobs:
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
             cd ~/mrom && mkdir -p kernel/asus && cd kernel/asus
-            git clone -b lineage-16.0 https://github.com/LineageOS/android_kernel_asus_sdm660 ASUS_X00TD --depth=1
+            git clone -b lineage-16.0 https://github.com/iatrz/android_kernel_asus_sdm660 ASUS_X00TD --depth=1
       - run:
           name: Install Packages
           no_output_timeout: 20m
