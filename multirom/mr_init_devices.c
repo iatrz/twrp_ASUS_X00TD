@@ -149,7 +149,14 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
     "/sys/devices/virtual/tty/ptmx",
-    "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
+    // "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
+
+    
+    "/sys/devices/soc/c1b6000.i2c/*",
+    "/sys/devices/soc/c176000.i2c/*",
+    "/sys/devices/soc/c178000.i2c/*",
+    "/sys/devices/soc/c1b7000.i2c/*",
+
 
     // ADB
     "/sys/devices/virtual/tty/ptmx",
