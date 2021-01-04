@@ -12,13 +12,10 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/graphics/fb0",
     "/sys/class/graphics/fb1",
     "/sys/devices/virtual/graphics/fb1",
-    // re-adding
     "/sys/bus/platform/drivers/*",
     "/sys/module/*",
 
-    // mmcblk
     "/sys/block/mmcblk0",
-    "/sys/bus/mmc/drivers/mmcblk",
 
     // Storage devices
     "/sys/dev/block/*",
@@ -32,11 +29,6 @@ const char *mr_init_devices[] =
 
     // Internal storage
     "/sys/devices/soc/c0c4000.sdhci",
-    "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0",
-    "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
-    "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001",
-    "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0",
-
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:0",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:1",
@@ -57,6 +49,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde/*",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf/*",
 
+
     // External storage
     //"/sys/block/mmcblk1",
     //"/sys/block/mmcblk1",
@@ -66,6 +59,9 @@ const char *mr_init_devices[] =
     // Devices
     "/sys/bus*",
     "/sys/bus/mmc",
+    "/sys/bus/mmc/drivers/mmcblk",
+    "/sys/devices*",
+    "/sys/module*",
     "/sys/devices/virtual/mem/null",
     "/sys/devices/virtual/misc/fuse",
 
@@ -74,17 +70,11 @@ const char *mr_init_devices[] =
     "/sys/class/input/input*",
     "/sys/class/misc/uinput",
     "/sys/class/tty/ptmx",
-    "/sys/devices/soc/soc:qcom,mdss_wb_panel",
     "/sys/devices/soc/soc:gpio_keys/input/input8",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
     "/sys/devices/virtual/tty/ptmx",
-    "/sys/devices/soc/a800000.ssusb/a904000.qcom,usbbam",
-    "/sys/devices/soc/a800000.ssusb",
-
-    "/sys/devices/soc/c176000.i2c/*",
-    "/sys/devices/soc/c1b7000.i2c/*",
-    "/sys/devices/soc/c178000.i2c/*",
+    "/sys/devices/soc/c178000.i2c/i2c-4/4-0062",
 
     // ADB
     "/sys/devices/virtual/tty/ptmx",
@@ -94,8 +84,9 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/misc/mtp_usb",
 
     // USB
-    "/sys/bus/usb*",
-    "/sys/devices/soc/a800000.ssusb/a800000.dwc3*",
+    "/sys/bus/usb",
+    "/sys/bus/platform/drivers/xhci-hcd*",
+    "/sys/devices/soc/a800000.ssusb/a800000.dwc3/",
 
     // Encryption
     "/sys/devices/virtual/icesdcc/icesdcc",
