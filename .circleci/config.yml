@@ -11,6 +11,8 @@ jobs:
             sudo apt install -y gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
             sudo apt install python3 python3.6 bison repo libssl-dev build-essential curl flex git gnupg gperf liblz4-tool libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev build-essential kernel-package libncurses5-dev bzip2 git python sudo gcc g++ openssh-server tar gzip ca-certificates -y
             sudo apt install ccache curl flex  git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev -y
+            sudo apt install curl gnupg gperf libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools zip zlib1g-dev g++-multilib lib32ncurses5-dev -y
+            sudo apt install androidsdk-uiautomatorviewer android-src-vendor android-tools-adb android-headers android-tools-adbd androidsdk-ddms android-tools-fastboot androidsdk-hierarchyviewer android-tools-fsutils androidsdk-traceview -y
       - run:
           name: Syncing source
           no_output_timeout: 20m
