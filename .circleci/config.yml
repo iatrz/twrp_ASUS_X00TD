@@ -46,6 +46,7 @@ jobs:
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
             mka -j$(nproc --all) recoveryimage
+            mka -j$(nproc --all) multirom trampoline
             mka -j$(nproc --all) multirom_zip
             mka -j$(nproc --all) multirom_uninstaller
       - run:
