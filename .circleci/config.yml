@@ -19,7 +19,7 @@ jobs:
             cd ~/mrom/system/extras/multirom
             git submodule update --init
             cd ~/mrom && rm -rf system/extras/libbootimg
-            git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
+            git clone https://github.com/multirom-klte/libbootimg ~/mrom/system/extras/libbootimg
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
             cd ~/mrom && mkdir -p kernel/asus && cd kernel/asus
