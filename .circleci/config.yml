@@ -47,17 +47,21 @@ jobs:
             export CROSS_COMPILE_ARM32=arm-linux-androideabi-
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
+            echo "compile recovery image"
             mka -j$(nproc --all) recoveryimage
+            echo "compile multirom trampoline"
             mka -j$(nproc --all) multirom trampoline
+            echo "compile mrom zip"
             mka -j$(nproc --all) multirom_zip
-            mka -j$(nproc --all) multirom_uninstaller
+            echo "compile mrom_uninstaller"
+            #mka -j$(nproc --all) multirom_uninstaller
       - run:
           name: Telegram Upload CI
           no_output_timeout: 20m
           command: |
             cd ~/mrom/out/target/product/ASUS_X00TD
             ZIPNAME="MultiROM-$(date +%d_%m_%Y_%H_%M)-X00TD.zip"
-            sudo zip -r9 $ZIPNAME recovery.img multirom.zip multirom_uninstaller.zip
+            sudo zip -r9 $ZIPNAME recovery.img multirom.zip
             curl -F chat_id=$CHAT_ID -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot$BOT_TOKEN/sendDocument
 workflows:
   version: 2.1
