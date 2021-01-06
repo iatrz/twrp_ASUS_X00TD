@@ -22,7 +22,7 @@ jobs:
           command: |
             cd ~
             mkdir mrom && cd mrom
-            repo init --depth=1 -u git://github.com/Linux-On-Sdm6Series/android.git -b multirom
+            repo init --depth=1 -u https://github.com/KernelPanic-OpenSource/manifest -b mr-9.0
             repo sync --fetch-submodules
             rm -rf ~/mrom/bootable/recovery
             git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
