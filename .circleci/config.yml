@@ -25,7 +25,7 @@ jobs:
             repo init --depth=1 -u git://github.com/Linux-On-Sdm6Series/android.git -b multirom
             repo sync --fetch-submodules
             rm -rf ~/mrom/bootable/recovery
-            git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/bootable_recovery ~/mrom/bootable/recovery
+            git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
             rm -rf ~/mrom/system/extras/multirom
             git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             cd ~/mrom/system/extras/multirom
