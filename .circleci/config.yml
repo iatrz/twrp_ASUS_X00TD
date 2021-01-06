@@ -27,7 +27,7 @@ jobs:
             rm -rf ~/mrom/bootable/recovery
             git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/bootable_recovery ~/mrom/bootable/recovery
             rm -rf ~/mrom/system/extras/multirom
-            git clone -b master https://github.com/multirom-klte/multirom system/extras/multirom
+            git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             rm -rf ~/mrom/system/extras/multirom/adbd
             git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/system_extras_multirom_adbd system/extras/multirom/adbd
             cd ~/mrom/system/extras/multirom
