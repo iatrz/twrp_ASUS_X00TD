@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   mrom-X00TD:
    docker:
-      - image: iatrpkd/docker:Twrp-build
+      - image: dopaemon/docker-image:MultiROM
    steps:
       - run:
           name: Install Packages
