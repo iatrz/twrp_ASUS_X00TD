@@ -41,8 +41,9 @@ jobs:
           no_output_timeout: 20m
           command: |
             cd ~/mrom
+            sudo apt install gcc-arm-linux-androideabi g++-arm-linux-androideabi -y
             export ALLOW_MISSING_DEPENDENCIES=true
-            export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+            export CROSS_COMPILE_ARM32=arm-linux-androideabi-
             source build/envsetup.sh
             lunch omni_ASUS_X00TD-eng
             mka -j$(nproc --all) recoveryimage
