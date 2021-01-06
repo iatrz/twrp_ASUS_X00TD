@@ -22,7 +22,7 @@ jobs:
           command: |
             cd ~
             mkdir mrom && cd mrom
-            repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+            repo init --depth=1 -u https://github.com/KernelPanic-OpenSource/manifest -b mr-9.0
             repo sync --fetch-submodules
             rm -rf ~/mrom/device/oppo/common && rm -rf ~/mrom/device/oneplus/bacon && rm -rf ~/mrom/kernel/oneplus/bacon
             rm -rf ~/mrom/bootable/recovery
