@@ -27,8 +27,8 @@ jobs:
             rm -rf ~/mrom/device/oppo/common && rm -rf ~/mrom/device/oneplus/bacon && rm -rf ~/mrom/kernel/oneplus/bacon
             #rm -rf ~/mrom/bootable/recovery
             #git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
-            #rm -rf ~/mrom/system/extras/multirom
-            #git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
+            rm -rf ~/mrom/system/extras/multirom
+            git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             #cd ~/mrom/system/extras/multirom
             #git submodule update --init
             #cd ~/mrom && rm -rf system/extras/libbootimg
