@@ -81,7 +81,7 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_BOARD_PLATFORM := sdm660
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
@@ -125,7 +125,7 @@ MR_ENCRYPTION := true
 MR_ENCRYPTION_FAKE_PROPERTIES := true
 MR_ENCRYPTION_FAKE_PROPERTIES_EXTRAS := $(DEVICE_PATH)/multirom/mr_fake_properties.c
 MR_ENCRYPTION_SETUP_SCRIPT := $(DEVICE_PATH)/multirom/mr_cp_crypto.sh
-MR_FSTAB := $(DEVICE_PATH)/multirom/mrom.fstab
+MR_FSTAB := $(DEVICE_PATH)/recovery.fstab
 MR_INIT_DEVICES := $(DEVICE_PATH)/multirom/mr_init_devices.c
 MR_INPUT_TYPE := type_b
 MR_KEXEC_MEM_MIN := 0x86000000
