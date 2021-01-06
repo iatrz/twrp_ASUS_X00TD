@@ -33,7 +33,7 @@ jobs:
             cd ~/mrom && rm -rf ~/mrom/system/extras/multirom/adbd
             git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/system_extras_multirom_adbd system/extras/multirom/adbd
             cd ~/mrom && rm -rf system/extras/libbootimg
-            git clone https://github.com/multirom-klte/libbootimg ~/mrom/system/extras/libbootimg
+            git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
             cd ~/mrom && mkdir -p kernel/asus && cd kernel/asus
