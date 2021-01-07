@@ -9,6 +9,7 @@ const char *mr_fake_properties[][2] =
     { "ro.boot.bootdevice", "c0c4000.sdhci" },        // used by libcryptfs_hw.so
     { "ro.crypto.state", "encrypted" },               // used by libcryptfs.so
     { "ro.crypto.type",   "file"},
+    { "ro.product_variables", "omnirom"}
     { "ro.product.board", "sdm660"},
     { "hwservicemanager.ready", "true"},
     { "ro.property_service.version", "2"},
