@@ -10,7 +10,7 @@ const char *mr_fake_properties[][2] =
     { "ro.crypto.state", "encrypted" },               // used by libcryptfs.so
     { "ro.crypto.type",   "block"},
     { "ro.product_variables", "omnirom"}
-    { "ro.product.board", "sdm660"},
+    { "ro.product.board", "sdm636"},
     { "hwservicemanager.ready", "true"},
     { "ro.property_service.version", "2"},
     { "ro.build.version.release", "9.0.0"},
