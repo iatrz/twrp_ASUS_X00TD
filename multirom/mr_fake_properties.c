@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 // Allows to specify a device/custom specific file for
 // additional properties needed by decryption
 const char *mr_fake_properties[][2] =
@@ -8,8 +7,7 @@ const char *mr_fake_properties[][2] =
     { "sys.keymaster.loaded", "true" },               // used by keystore.msm8952.so / keystore.default.so
     { "ro.boot.bootdevice", "c0c4000.sdhci" },        // used by libcryptfs_hw.so
     { "ro.crypto.state", "encrypted" },               // used by libcryptfs.so
-    { "ro.crypto.type",   "block"},
-    { "ro.product_variables", "omnirom"}
+    { "ro.crypto.type",   "file"},
     { "ro.product.board", "sdm636"},
     { "hwservicemanager.ready", "true"},
     { "ro.property_service.version", "2"},
