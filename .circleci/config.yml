@@ -40,7 +40,6 @@ jobs:
             git clone -b android-8.1.0_r51 https://android.googlesource.com/platform/tools/apksig ~/mrom/tools/apksig
             git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys ~/mrom/vendor/qcom/opensource/commonsys
             cd ~/mrom/vendor/qcom/opensource/commonsys && git checkout 55b77691ef05d6d9b0946df182dfd6c7388ea71c && cd ~/mrom
-            rm -rf ~/mrom/device/qcom/common
       - run:
           name: Building
           no_output_timeout: 20m
