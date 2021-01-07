@@ -81,7 +81,7 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_BOARD_PLATFORM := sdm660
 
 # Crypto
-TARGET_HW_DISK_ENCRYPTION := true
+#TARGET_HW_DISK_ENCRYPTION := true
 #TW_INCLUDE_CRYPTO := true
 #TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
