@@ -39,6 +39,7 @@ jobs:
             git clone -b lineage-16.0 https://github.com/iatrz/android_kernel_asus_sdm660 ASUS_X00TD --depth=1
             git clone -b android-8.1.0_r51 https://android.googlesource.com/platform/tools/apksig ~/mrom/tools/apksig
             git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys ~/mrom/vendor/qcom/opensource/commonsys
+            rm -rf ~/mrom/device/qcom/common
       - run:
           name: Building
           no_output_timeout: 20m
