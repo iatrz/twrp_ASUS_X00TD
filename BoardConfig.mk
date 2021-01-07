@@ -84,7 +84,8 @@ TARGET_BOARD_PLATFORM := sdm660
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
-TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
+#TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 #TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
 
