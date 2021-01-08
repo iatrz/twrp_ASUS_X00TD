@@ -31,6 +31,7 @@ jobs:
             rm -rf ~/mrom/system/extras/multirom
             #git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             git clone -b master https://github.com/multirom-klte/multirom ~/mrom/system/extras/multirom
+            rm -rf ~/mrom/system/extras/multirom/adbd
             git clone -b master https://github.com/multirom-klte/adbd ~/mrom/system/extras/multirom/adbd
             cd ~/mrom/system/extras/multirom
             git submodule update --init
