@@ -26,8 +26,9 @@ jobs:
             repo sync --fetch-submodules
             rm -rf ~/mrom/device/oppo/common && rm -rf ~/mrom/device/oneplus/bacon && rm -rf ~/mrom/kernel/oneplus/bacon
             rm -rf ~/mrom/bootable/recovery
-            git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
+            #git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
             #git clone -b android-8.1-mrom https://github.com/multirom-klte/android_bootable_recovery ~/mrom/bootable/recovery
+            git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/bootable_recovery.git ~/mrom/bootable/recovery
             rm -rf ~/mrom/system/extras/multirom
             #git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             git clone -b master https://github.com/multirom-klte/multirom ~/mrom/system/extras/multirom
