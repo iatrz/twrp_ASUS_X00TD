@@ -44,8 +44,8 @@ jobs:
             #cd ~/mrom && mkdir -p kernel/asus && cd kernel/asus
             #git clone -b lineage-16.0 https://github.com/iatrz/android_kernel_asus_sdm660 ASUS_X00TD --depth=1
             git clone -b android-8.1.0_r51 https://android.googlesource.com/platform/tools/apksig ~/mrom/tools/apksig
-            git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys ~/mrom/vendor/qcom/opensource/commonsys
-            cd ~/mrom/vendor/qcom/opensource/commonsys && git checkout 55b77691ef05d6d9b0946df182dfd6c7388ea71c && cd ~/mrom
+            #git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys ~/mrom/vendor/qcom/opensource/commonsys
+            #cd ~/mrom/vendor/qcom/opensource/commonsys && git checkout 55b77691ef05d6d9b0946df182dfd6c7388ea71c && cd ~/mrom
       - run:
           name: Building
           no_output_timeout: 20m
