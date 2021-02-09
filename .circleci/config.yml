@@ -24,22 +24,20 @@ jobs:
             mkdir mrom && cd mrom
             repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
             repo sync --fetch-submodules
-            rm -rf ~/mrom/device/oppo/common && rm -rf ~/mrom/device/oneplus/bacon && rm -rf ~/mrom/kernel/oneplus/bacon
-            rm -rf ~/mrom/bootable/recovery
-            #git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
+            git clone -b android-8.1-mrom https://github.com/vasishath/android_bootable_recovery ~/mrom/bootable/recovery
             #git clone -b android-8.1-mrom https://github.com/multirom-klte/android_bootable_recovery ~/mrom/bootable/recovery
-            git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/bootable_recovery.git ~/mrom/bootable/recovery
+            #git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/bootable_recovery.git ~/mrom/bootable/recovery
             rm -rf ~/mrom/system/extras/multirom
-            #git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
+            git clone -b android-10 https://github.com/vasishath/multirom system/extras/multirom
             #git clone -b master https://github.com/multirom-klte/multirom ~/mrom/system/extras/multirom
-            git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/system_extras_multirom.git ~/mrom/system/extras/multirom
+            #git clone -b mr-9.0 https://github.com/KernelPanic-OpenSource/system_extras_multirom.git ~/mrom/system/extras/multirom
             rm -rf ~/mrom/system/extras/multirom/adbd
             git clone -b master https://github.com/multirom-klte/adbd ~/mrom/system/extras/multirom/adbd
             cd ~/mrom/system/extras/multirom
             git submodule update --init
             cd ~/mrom && rm -rf system/extras/libbootimg
-            #git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
-            git clone -b master https://github.com/multirom-klte/libbootimg ~/mrom/system/extras/libbootimg
+            git clone https://github.com/vasishath/libbootimg ~/mrom/system/extras/libbootimg
+            #git clone -b master https://github.com/multirom-klte/libbootimg ~/mrom/system/extras/libbootimg
             mkdir -p device/asus && cd device/asus
             git clone -b multirom https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME ASUS_X00TD
             #cd ~/mrom && mkdir -p kernel/asus && cd kernel/asus
