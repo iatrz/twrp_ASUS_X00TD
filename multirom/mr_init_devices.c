@@ -9,7 +9,6 @@ const char *mr_init_devices[] =
 {
     // FrameBuffers
     "/sys/class/graphics/fb0",
-    #"/sys/devices/virtual/graphics/fb0",
     "/sys/bus/platform/drivers/*",
     "/sys/module/*",
 
