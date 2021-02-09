@@ -16,13 +16,8 @@ const char *mr_init_devices[] =
 
     // Storage devices
     "/sys/dev/block/*",
-    "/sys/block/sda",
-    "/sys/block/sdb",
-    "/sys/block/sdc",
-    "/sys/block/sdd",
-    "/sys/block/sde",
-    "/sys/block/sdf",
-    "/sys/module/mmcblk",
+    "/sys/block/mmcblk0/mmcblk0p*",
+    
 
     // Internal storage
     /* "/sys/devices/soc/c0c4000.sdhci",
@@ -46,7 +41,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:4/block/sde/*",
     "/sys/devices/soc/c0c4000.sdhci/host0/target0:0:0/0:0:0:5/block/sdf/*", */
     
-    "/sys/devices/soc/c084000.sdhci/mmc_host/mmc1/mmc1:0001/block/mmcblk1",
+    /* "/sys/devices/soc/c084000.sdhci/mmc_host/mmc1/mmc1:0001/block/mmcblk1",
     "/sys/devices/soc/c084000.sdhci/mmc_host/mmc1/mmc1:0001",
     "/sys/devices/soc/c084000.sdhci/mmc_host/mmc1",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0",
@@ -120,7 +115,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc/c0c4000.sdhci/mmc_host/mmc0",
-    "/sys/devices/soc/soc:qcom,msm-pcm-hostless",
+    "/sys/devices/soc/soc:qcom,msm-pcm-hostless", */
 
     // External storage
     //"/sys/block/mmcblk1",
