@@ -146,6 +146,9 @@ const char *mr_init_devices[] =
     "/sys/class/misc/android_rndis_qc",
     "/sys/devices/virtual/misc/mtp_usb",
 
+    // apparently: for qualcomm overlay - /dev/ion
+    "/sys/devices/virtual/misc/ion",
+
     // USB
     "/sys/bus/usb",
     "/sys/bus/platform/drivers/xhci-hcd*",
