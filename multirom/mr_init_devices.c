@@ -16,7 +16,6 @@ const char *mr_init_devices[] =
 
     // Storage devices
     "/sys/dev/block/*",
-    "/sys/block/mmcblk0/mmcblk0p*",
     
 
     // Internal storage
