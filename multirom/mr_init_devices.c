@@ -8,14 +8,11 @@
 const char *mr_init_devices[] =
 {
     // FrameBuffers
-    "/sys/class/graphics/fb0",
+    "/sys/class/graphics/fb1",
     "/sys/bus/platform/drivers/*",
     "/sys/module/*",
 
     "/sys/block/mmcblk0",
-
-    // Storage devices
-    "/sys/dev/block/*",
     
 
     // Internal storage
